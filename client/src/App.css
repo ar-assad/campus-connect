@@ -12,6 +12,7 @@
   --color-border: #e6ecf5;
   --color-green: #3eb926;
   --color-invert: #546cfb;
+  --color-primary-hover: #cc3e3f;
 }
 
 ::-webkit-scrollbar {
@@ -2441,4 +2442,15 @@ div.message.info {
   width: 50px;
   height: 50px;
   margin-right: 10px;
+}
+
+main .container .right-sidebar a.new-topic button:hover,
+main .container .thread form button:hover,
+main .container .edit-profile .left .profile .section-content button:hover,
+.auth-form .card form button.auth-submit:hover {
+  background-color: var(--color-primary-hover);
+}
+
+button.login:hover, button.register:hover{
+  background-color: var(--color-primary-hover) !important;
 }
