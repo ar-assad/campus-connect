@@ -7,13 +7,13 @@ const sendEmail = async (options) => {
     port: process.env.SMTP_PORT,
     secure: false,
     auth: {
-      user: process.env.SMPT_USERNAME,
-      pass: process.env.SMPT_PASSWORD,
+      user: process.env.SMTP_USERNAME,
+      pass: process.env.SMTP_PASSWORD,
     },
   });
 
   const mailOptions = {
-    from: `ONetwork Forum <${process.env.SMPT_USERNAME}>`,
+    from: `ONetwork Forum <${process.env.SMTP_USERNAME}>`,
     to: options.email,
     subject: options.subject,
     text: options.text,
