@@ -50,7 +50,8 @@ const Header = () => {
         <Navbar expand="lg">
           <Container>
             <Link to="/" onClick={() => dispatch(setSearchQuery(""))}>
-              <Navbar.Brand>Forum Logo</Navbar.Brand>
+              <Image src="/logo.png" alt="logo" className="logo" />
+              <Navbar.Brand>Campus Connect</Navbar.Brand>
             </Link>
             <Navbar.Toggle aria-controls="navbarsupportedcontent" />
             <Navbar.Collapse id="navbarsupportedcontent">
