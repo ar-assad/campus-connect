@@ -45,6 +45,10 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
+
 body {
   font-family: "Varela Round", sans-serif;
   color: var(--color-text);
@@ -584,7 +588,7 @@ main .container .profile .profile-info .tab-ui .topic-brief .tags .nav-link {
   font-size: 13px;
   font-weight: 700;
   text-transform: capitalize;
-  padding: 0.5rem 1rem;
+  padding: 0.2rem 0.7rem;
   color: var(--color-invert);
   border: 1px solid var(--color-invert);
   background-color: rgba(84, 108, 251, 0.05);
