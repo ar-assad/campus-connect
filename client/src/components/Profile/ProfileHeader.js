@@ -67,7 +67,6 @@ const ProfileHeader = memo(() => {
               <div className="user-meta">
                 <span className="user-id">#{userProfile?.userID}</span>
                 <span className="username">@{userProfile?.username}</span>
-                <span className="user-website">sphinxo.dev</span>
               </div>
               <div className="user-actions">
                 {username === loggedUser && (
