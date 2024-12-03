@@ -1,6 +1,19 @@
 @import url("https://fonts.googleapis.com/css?family=Varela+Round");
 @import url("https://fonts.googleapis.com/css?family=Comfortaa");
 
+:root {
+  --color-primary: #e24c4f;
+  --color-secondary: #6f7f92;
+  --color-background: #f0f5f9;
+  --color-background-alt: #f1f0f8;
+  --color-text: #07142e;
+  --color-error: #f14646;
+  --color-success: #00c792;
+  --color-border: #e6ecf5;
+  --color-green: #3eb926;
+  --color-invert: #546cfb;
+}
+
 ::-webkit-scrollbar {
   width: 5px;
   height: 5px;
@@ -33,8 +46,8 @@
 
 body {
   font-family: "Varela Round", sans-serif;
-  color: #07142e;
-  background: linear-gradient(205deg, #f0f5f9, #f1f0f8);
+  color: var(--color-text);
+  background: linear-gradient(205deg, var(--color-background), var(--color-background-alt));
 }
 
 .form-control:disabled {
@@ -68,7 +81,7 @@ header .navbar-collapse > div {
 header .search-form .input-group {
   padding: 5px;
   background: #f8f8fa;
-  color: #6f7f92;
+  color: var(--color-secondary);
   flex-wrap: nowrap;
   border-radius: 10px / 20px;
 }
@@ -77,18 +90,18 @@ header .search-form input {
   border: none;
   outline: none;
   background: none;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 header .search-form input::placeholder {
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 header .search-form input:focus {
   background: none;
   border: none;
   box-shadow: none;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 header .search-form .input-group-prepend {
@@ -118,7 +131,7 @@ header .search-form .input-group-prepend {
 
 .dropdown .dropdown-toggle svg {
   font-size: 24px;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .dropdown .dropdown-toggle .circle {
@@ -127,7 +140,7 @@ header .search-form .input-group-prepend {
   height: 12px;
   border: 2px solid white;
   border-radius: 50%;
-  background: red;
+  background: var(--color-invert);
   bottom: 8px;
   right: 6px;
   -webkit-animation: pulses 1.5s infinite cubic-bezier(0.66, 0.33, 0, 1);
@@ -147,26 +160,26 @@ header .search-form .input-group-prepend {
 
 .dropdown .dropdown-header {
   font-weight: 700;
-  color: #07142e;
+  color: var(--color-text);
   font-size: 15px;
-  border-bottom: 2px solid #f0f5f9;
+  border-bottom: 2px solid var(--color-background);
   padding: 15px 20px;
 }
 
 .dropdown .dropdown-header .badge {
-  background: #546cfb;
+  background: var(--color-primary);
   margin-left: 6px;
 }
 
 .dropdown .dropdown-item {
   padding: 15px 10px;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
 }
 
 .dropdown .dropdown-item.active,
 .dropdown .dropdown-item:active {
   background: #e2f2ff;
-  color: #07142e;
+  color: var(--color-text);
 }
 
 .dropdown .dropdown-item .notif-media {
@@ -183,7 +196,7 @@ header .search-form .input-group-prepend {
   position: absolute;
   width: 30%;
   height: 30%;
-  background: red;
+  background: var(--color-invert);
   bottom: -3px;
   border-radius: 50%;
   right: -4px;
@@ -213,7 +226,7 @@ header .search-form .input-group-prepend {
 
 .dropdown .dropdown-item .notif-text .notif-date {
   font-size: 13px;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .dropdown .dropdown-item .notif-text .notif-date svg {
@@ -228,18 +241,18 @@ header .search-form .input-group-prepend {
 .dropdown .dropdown-item .msg-text h5 {
   font-size: 1rem;
   font-weight: 700;
-  color: #07142e;
+  color: var(--color-text);
   margin-right: auto;
 }
 
 .dropdown .dropdown-item .msg-text .msg-date {
   font-size: 13px;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .dropdown .dropdown-item .message {
   font-size: 13.5px;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .dropdown.profile .dropdown-toggle img {
@@ -281,7 +294,7 @@ main .container {
 main .container .left-sidebar .nav,
 main .container .right-sidebar .nav {
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
   padding: 10px 15px;
@@ -294,12 +307,12 @@ main .container .left-sidebar .nav:first-child {
 main .container .left-sidebar .nav .nav-link,
 main .container .right-sidebar .top .nav-link {
   padding: 1rem;
-  color: #6f7f92;
-  border-bottom: 1px solid #f0f5f9;
+  color: var(--color-secondary);
+  border-bottom: 1px solid var(--color-background);
   font-size: 0.875rem;
   font-weight: 600;
   text-transform: capitalize;
-  border-left-color: #546cfb;
+  border-left-color: var(--color-primary);
   border-left-style: solid;
   border-left-width: 0;
   transition: all 0.3s;
@@ -312,12 +325,12 @@ main .container .left-sidebar .side-topics .nav-link:hover {
 
 main .container .left-sidebar .side-topics .nav-link:hover,
 main .container .left-sidebar .side-topics .nav-link:hover svg {
-  color: #546cfb;
+  color: var(--color-primary);
 }
 
 main .container .left-sidebar .side-topics .nav-link svg {
   margin-right: 8px;
-  color: #6f7f92;
+  color: var(--color-secondary);
   transition: color 0.3s;
 }
 
@@ -329,13 +342,13 @@ main .container .right-sidebar .top div.nav-item {
   font-size: 20px;
   font-weight: 700;
   max-width: 100%;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
   text-transform: capitalize;
 }
 
 main .container .left-sidebar .side-spaces div.nav-item::after,
 main .container .right-sidebar .top div.nav-item::after {
-  background: #546cfb;
+  background: var(--color-primary);
   content: "";
   height: 100%;
   left: -15px;
@@ -361,7 +374,7 @@ main .container .left-sidebar .side-spaces .nav-link img.space-icon {
 main .container .left-sidebar .side-spaces .nav-link,
 main .container .right-sidebar .top .nav-link {
   border-radius: 18px;
-  border-bottom: 2px solid #f0f5f9;
+  border-bottom: 2px solid var(--color-background);
 }
 
 main .container .left-sidebar .side-spaces .nav-link:not(:last-child),
@@ -372,7 +385,7 @@ main .container .right-sidebar .top .nav-link:not(:last-child) {
 main .container .left-sidebar .side-spaces .nav-link:hover,
 main .container .right-sidebar .top .nav-link:hover {
   background: rgba(84, 108, 251, 0.05);
-  border-color: #546cfb;
+  border-color: var(--color-primary);
 }
 
 main .container .filter {
@@ -385,7 +398,7 @@ main .container .filter::after {
   position: absolute;
   width: 200px;
   height: 2px;
-  background: #546cfb;
+  background: var(--color-primary);
   left: 0;
   bottom: -2px;
 }
@@ -416,7 +429,7 @@ main .container .topics {
 
 main .container .topic-item {
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
   position: relative;
@@ -432,7 +445,7 @@ main .container .profile .profile-info .tab-ui .topic-vote {
   position: absolute;
   top: 10%;
   left: 30px;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 main .container .topic-item .topic-vote button,
@@ -440,7 +453,7 @@ main .container .profile .profile-info .tab-ui .topic-vote button {
   background: none;
   border: none;
   outline: none;
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 24px;
   padding: 0;
   width: 24px;
@@ -485,7 +498,7 @@ main
   .topic-vote
   button:nth-of-type(1):hover
   svg {
-  color: #546cfb;
+  color: var(--color-invert);
 }
 
 main .container .topic-item .topic-vote button:nth-of-type(2):hover svg,
@@ -498,7 +511,7 @@ main
   .topic-vote
   button:nth-of-type(2):hover
   svg {
-  color: red;
+  color: var(--color-primary);
 }
 
 main .container .topic-item .topic-vote button:nth-of-type(1) svg,
@@ -536,11 +549,11 @@ main .container .profile .profile-info .tab-ui .topic-vote .votes {
 }
 
 main .container .topic-item .topic-vote .votes.upvoted {
-  color: #546cfb;
+  color: var(--color-invert);
 }
 
 main .container .topic-item .topic-vote .votes.downvoted {
-  color: red;
+  color: var(--color-primary);
 }
 
 main .container .topic-item .topic-item-content {
@@ -571,8 +584,8 @@ main .container .profile .profile-info .tab-ui .topic-brief .tags .nav-link {
   font-weight: 700;
   text-transform: capitalize;
   padding: 0.5rem 1rem;
-  color: #546cfb;
-  border: 1px solid #546cfb;
+  color: var(--color-invert);
+  border: 1px solid var(--color-invert);
   background-color: rgba(84, 108, 251, 0.05);
 }
 
@@ -582,15 +595,15 @@ main .container .topic-item .topic-item-content .topic-title {
 }
 
 main .container .topic-item .topic-item-content .topic-summary {
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 15px;
   line-height: 26px;
   padding-bottom: 20px;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
 }
 
 main .container .topic-item .topic-item-content .topic-meta {
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 13px;
 }
 
@@ -642,7 +655,7 @@ main
   .topic-brief
   .topic-writer
   h5.writer {
-  color: #07142e;
+  color: var(--color-text);
   font-size: 1rem;
   font-weight: 700;
   margin: 0;
@@ -677,7 +690,7 @@ main .container .right-sidebar a.new-topic button,
 button.login,
 button.register {
   position: relative;
-  background: #546cfb;
+  background: var(--color-primary);
   outline: none;
   border: none;
 }
@@ -687,7 +700,7 @@ button.register:hover,
 button.login:active,
 button.register:active {
   position: relative;
-  background: #546cfb !important;
+  background: var(--color-primary) !important;
   color: white;
   outline: none;
   border: none;
@@ -734,7 +747,7 @@ main .container .right-sidebar .nav:not(:last-child) {
 }
 
 main .container .right-sidebar .top .nav-item p.nav-description {
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 15px;
   line-height: 26px;
   font-weight: 500;
@@ -743,7 +756,7 @@ main .container .right-sidebar .top .nav-item p.nav-description {
 }
 
 main .container .right-sidebar .top .nav-link {
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 main .container .right-sidebar .top .nav-link img {
@@ -786,7 +799,7 @@ main .container .right-sidebar .top .nav-link h4.topic-title {
   font-size: 18px;
   line-height: 22px;
   font-weight: 700;
-  color: #07142e;
+  color: var(--color-text);
 }
 
 main .container .right-sidebar .top .nav-link span.topic-replies {
@@ -804,7 +817,7 @@ main .container .thread .topic-item-content {
 
 main .container .thread .topic-item-content .topic-title {
   margin-top: 1.3rem;
-  color: #07142e;
+  color: var(--color-text);
   font-size: 1.7rem;
 }
 
@@ -817,7 +830,7 @@ main .container .thread .topic-item-content .topic-meta .topic-writer {
 }
 
 main .container .thread .topic-item-content .topic-summary {
-  color: #07142e;
+  color: var(--color-text);
   font-size: 16px;
 }
 
@@ -843,7 +856,7 @@ main .container .thread .topic-item-content .tags-container .tags .nav-item {
 
 main .container .thread .topic-item-content .thread-actions .nav-link {
   padding: 0;
-  color: #6f7f92;
+  color: var(--color-secondary);
   text-transform: capitalize;
   font-size: 0.875rem;
   font-weight: 600;
@@ -873,7 +886,7 @@ main .container .thread .answers {
   margin-top: 2rem;
   margin-bottom: 1rem;
   padding-bottom: 5px;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
   text-transform: capitalize;
 }
 
@@ -885,7 +898,7 @@ main .container .thread .answers span {
 main .container .thread .answers span.stats {
   margin-right: 1rem;
   background: #fff;
-  color: #07142e;
+  color: var(--color-text);
   font-weight: bold;
 }
 
@@ -894,7 +907,7 @@ main .container .thread .answers span svg {
 }
 
 main .container .thread .answers span.stats svg {
-  color: #546cfb;
+  color: var(--color-primary);
 }
 
 main .container .thread .add-comment {
@@ -921,7 +934,7 @@ main .container .thread .add-comment img {
 
 main .container .thread form button {
   position: relative;
-  background: #546cfb;
+  background: var(--color-primary);
   margin-top: 10px;
   margin-bottom: 5px;
   outline: none;
@@ -929,7 +942,7 @@ main .container .thread form button {
 }
 
 main .container .thread form button:focus {
-  background: #546cfb;
+  background: var(--color-primary);
   outline: none;
   border: none;
 }
@@ -964,7 +977,7 @@ main .container .thread .comments-container .comment .commenter-avatar img {
   height: 100%;
   padding: 2px;
   border-radius: 50%;
-  border: 5px solid #6f7f92;
+  border: 5px solid var(--color-secondary);
   background: #fff;
 }
 
@@ -1086,7 +1099,7 @@ main
   span.comment-date {
   font-size: 14px;
   margin-left: auto;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 main
@@ -1139,7 +1152,7 @@ main
   .nav-link {
   padding: 0;
   text-transform: capitalize;
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 14px;
 }
 
@@ -1155,7 +1168,7 @@ main
   .comment-info
   .comment-actions
   .nav-link.upvote.pressed {
-  color: #546cfb;
+  color: var(--color-invert);
 }
 
 main
@@ -1166,7 +1179,7 @@ main
   .comment-info
   .comment-actions
   .nav-link.downvote.pressed {
-  color: red;
+  color: var(--color-primary);
 }
 
 main
@@ -1237,7 +1250,7 @@ main
 main .container .profile .profile-header {
   position: relative;
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
 }
@@ -1259,7 +1272,7 @@ main .container .profile .profile-header .user-profile-meta .user-avatar {
   clip-path: polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%);
   position: relative;
   margin: 25px;
-  background-image: linear-gradient(205deg, #f0f5f9, #f1f0f8);
+  background-image: linear-gradient(205deg, var(--color-background), var(--color-background-alt));
   width: 170px;
   height: 170px;
   flex-shrink: 0;
@@ -1391,7 +1404,7 @@ main
   .user-actions
   button.follow {
   background: #fff;
-  color: #07142e;
+  color: var(--color-text);
 }
 
 main
@@ -1418,7 +1431,7 @@ main
   .profile-menu
   .nav-link {
   position: relative;
-  color: #07142e;
+  color: var(--color-text);
   font-size: 15px;
   font-weight: 700;
   text-transform: capitalize;
@@ -1443,7 +1456,7 @@ main
   .profile-header-section
   .profile-menu
   .nav-link.active {
-  color: #546cfb;
+  color: var(--color-primary);
 }
 
 main
@@ -1453,7 +1466,7 @@ main
   .profile-header-section
   .profile-menu
   .nav-link.active::after {
-  border-bottom: 10px solid #546cfb;
+  border-bottom: 10px solid var(--color-primary);
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
   bottom: 0;
@@ -1538,7 +1551,7 @@ main .container .profile .profile-info {
 
 main .container .profile .profile-info .tab-ui {
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
   padding: 15px;
@@ -1546,7 +1559,7 @@ main .container .profile .profile-info .tab-ui {
 
 main .container .profile .profile-info .tab-ui h6.tab-title {
   font-weight: 700;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
   line-height: 18px;
   margin-bottom: 20px;
   padding-bottom: 10px;
@@ -1555,7 +1568,7 @@ main .container .profile .profile-info .tab-ui h6.tab-title {
 }
 
 main .container .profile .profile-info .tab-ui h6.tab-title::after {
-  background: #546cfb;
+  background: var(--color-primary);
   content: "";
   height: 100%;
   left: -15px;
@@ -1619,7 +1632,7 @@ main
   .topic-brief
   .topic-writer
   .topic-date {
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 13px;
   margin-bottom: 0;
 }
@@ -1631,7 +1644,7 @@ main .container .profile .profile-info .tab-ui .comment-brief {
 main .container .profile .profile-info .tab-ui .comment-type {
   position: absolute;
   border-radius: 50%;
-  background: #546cfb;
+  background: var(--color-primary);
   padding: 10px;
   color: #fff;
   margin-right: 6px;
@@ -1764,7 +1777,7 @@ main .container .profile .profile-info .tab-ui .follow-brief button {
   text-transform: capitalize;
   background: #fff;
   color: black;
-  border: 1px solid #f0f5f9;
+  border: 1px solid var(--color-background);
   box-shadow: none;
   outline: none;
 }
@@ -1794,7 +1807,7 @@ form.floating section:not(.new-topic-form) .form-group.col {
 }
 
 form.floating .form-label {
-  color: #6f7f92;
+  color: var(--color-secondary);
   font-size: 0.875rem;
   font-weight: 400;
   text-transform: capitalize;
@@ -1820,7 +1833,7 @@ form.floating .form-control {
   padding: 0 1rem;
   background: transparent;
   border-color: #f1f1f1;
-  color: #6f7f92;
+  color: var(--color-secondary);
   height: 3.123rem;
   font-size: 1rem;
   border-radius: 0.313rem;
@@ -1828,10 +1841,10 @@ form.floating .form-control {
 }
 
 form.floating .form-control:focus {
-  border-color: #546cfb;
+  border-color: var(--color-primary);
   outline: 0;
   box-shadow: none;
-  color: #07142e;
+  color: var(--color-text);
 }
 form.floating .form-control::-webkit-input-placeholder {
   color: transparent;
@@ -1850,16 +1863,16 @@ form.floating .form-control:-ms-input-placeholder {
 }
 
 form.floating .form-control:not(:placeholder-shown) ~ .form-label {
-  color: #6f7f92;
-  border-left: 0.0625rem solid #6f7f92;
-  border-right: 0.0625rem solid #6f7f92;
+  color: var(--color-secondary);
+  border-left: 0.0625rem solid var(--color-secondary);
+  border-right: 0.0625rem solid var(--color-secondary);
 }
 
 form.floating .form-control:focus:not(:placeholder-shown) ~ .form-label,
 form.floating .form-control:focus ~ .form-label {
-  color: #546cfb;
-  border-left: 0.0625rem solid #546cfb;
-  border-right: 0.0625rem solid #546cfb;
+  color: var(--color-primary);
+  border-left: 0.0625rem solid var(--color-primary);
+  border-right: 0.0625rem solid var(--color-primary);
 }
 
 form.floating .form-control:not(:placeholder-shown) ~ .form-label,
@@ -1876,7 +1889,7 @@ form.floating .form-control:focus ~ .form-label {
 main .container .edit-profile .left,
 main .container .edit-profile .right {
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
   padding: 10px 15px;
@@ -1891,11 +1904,11 @@ main .container .edit-profile h5.section-title {
   font-weight: 700;
   margin: 1rem 0;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
 }
 
 main .container .edit-profile h5.section-title::after {
-  background: #546cfb;
+  background: var(--color-primary);
   content: "";
   height: 100%;
   left: -15px;
@@ -1913,7 +1926,7 @@ main
   > *:not(:last-child) {
   margin-bottom: 3rem;
   padding-bottom: 2rem;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
 }
 
 main .container .edit-profile .left .profile .section-content > *:last-child {
@@ -1932,7 +1945,7 @@ main
   clip-path: polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%);
   position: relative;
   margin: 1rem auto;
-  background-image: linear-gradient(205deg, #f0f5f9, #f1f0f8);
+  background-image: linear-gradient(205deg, var(--color-background), var(--color-background-alt));
   width: 170px;
   height: 170px;
 }
@@ -1992,7 +2005,7 @@ main
 }
 
 main .container .edit-profile .left .profile .section-content button {
-  background: #546cfb;
+  background: var(--color-primary);
   outline: none;
   border: none;
   box-shadow: none;
@@ -2058,7 +2071,7 @@ main
   .section-content
   .user-meta
   .meta-item:not(:last-child) {
-  border-right: 1px solid #f0f5f9;
+  border-right: 1px solid var(--color-background);
 }
 
 main
@@ -2116,7 +2129,7 @@ main .container .edit-profile .right .edit-actions button {
 }
 
 main .container .edit-profile .right .edit-actions button:last-of-type {
-  background: #546cfb;
+  background: var(--color-primary);
   color: #fff;
 }
 
@@ -2125,7 +2138,7 @@ main .container .new-topic .new-topic-form {
   overflow: hidden;
   padding: 2rem;
   background: #fff;
-  border: 1px solid #e6ecf5;
+  border: 1px solid var(--color-border);
   box-shadow: 0 6px 10px rgb(0 0 0 / 5%);
   border-radius: 6px;
 }
@@ -2137,11 +2150,11 @@ main .container .new-topic .new-topic-form h5.section-title {
   font-weight: 700;
   margin: 1rem 0;
   padding-bottom: 1rem;
-  border-bottom: 1px solid #f0f5f9;
+  border-bottom: 1px solid var(--color-background);
 }
 
 main .container .new-topic .new-topic-form h5.section-title::after {
-  background: #546cfb;
+  background: var(--color-primary);
   content: "";
   height: 100%;
   left: -15px;
@@ -2190,20 +2203,20 @@ div.message {
 }
 
 div.message.error {
-  color: #f14646;
-  border-color: #f14646;
+  color: var(--color-error);
+  border-color: var(--color-error);
   background: rgba(241, 70, 70, 0.08627450980392157);
 }
 
 div.message.success {
-  color: #00c792;
-  border-color: #00c792;
+  color: var(--color-success);
+  border-color: var(--color-success);
   background: rgba(0, 199, 146, 0.08627450980392157);
 }
 
 div.message.info {
-  color: #546cfb;
-  border-color: #546cfb;
+  color: var(--color-primary);
+  border-color: var(--color-primary);
   background: rgba(0, 153, 204, 0.08627450980392157);
 }
 
@@ -2219,7 +2232,7 @@ div.message.info {
   z-index: 0;
   width: 100%;
   overflow: hidden;
-  background-color: #546cfb;
+  background-color: var(--color-primary);
   display: inline-block;
   position: absolute;
   top: 0;
@@ -2260,7 +2273,7 @@ div.message.info {
 }
 
 .auth-form .card h3 {
-  color: #07142e;
+  color: var(--color-text);
   font-weight: 600;
 }
 
@@ -2268,13 +2281,13 @@ div.message.info {
   font-size: 1rem;
   margin-top: 1rem;
   line-height: 1.65rem;
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .auth-form .card form label {
   margin-bottom: 0.875rem;
   font-size: 1.02rem;
-  color: #07142e;
+  color: var(--color-text);
 }
 
 .auth-form .card form > div {
@@ -2299,11 +2312,11 @@ div.message.info {
 }
 
 .auth-form .card form .form-control {
-  color: #6f7f92;
+  color: var(--color-secondary);
 }
 
 .auth-form .card form .form-control:focus {
-  color: #07142e;
+  color: var(--color-text);
   -webkit-box-shadow: none;
   box-shadow: none;
   outline: none;
@@ -2317,11 +2330,11 @@ div.message.info {
 
 .auth-form .card form a.forget-pwd {
   text-decoration: none;
-  color: #546cfb;
+  color: var(--color-primary);
 }
 
 .auth-form .card form button.auth-submit {
-  background: #546cfb;
+  background: var(--color-primary);
   border: none;
 }
 
@@ -2352,7 +2365,7 @@ div.message.info {
   padding: 0 1rem;
   background: transparent;
   border-color: #f1f1f1;
-  color: #6f7f92;
+  color: var(--color-secondary);
   height: 3.123rem;
   font-size: 1rem;
   border-radius: 0.313rem;
@@ -2362,7 +2375,7 @@ div.message.info {
 .new-topic-form form.floating button,
 .new-topic-form form.floating button:active {
   position: relative;
-  background-color: #546cfb;
+  background-color: var(--color-primary);
   outline: none;
   border: none;
 }
@@ -2383,7 +2396,7 @@ div.message.info {
   background-color: transparent;
   border: 0.125rem solid #fff;
   border-radius: 50%;
-  border-top: 0.125rem solid #546cfb;
+  border-top: 0.125rem solid var(--color-primary);
   content: "";
   height: 1.5em;
   left: calc(50% - 0.75rem);
