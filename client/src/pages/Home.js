@@ -1,7 +1,7 @@
 import { Row, Col, Form, Container } from "react-bootstrap";
 import TopicItem from "../components/Topic/TopicItem";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useMemo } from "react";
 import { getAllTopics, setSortOption } from "../redux/slices/topicSlice";
 import { resetUserProfile } from "../redux/slices/profileSlice";
 import RightSidebar from "../components/RightSidebar/RightSidebar";
@@ -13,19 +13,30 @@ const Home = () => {
   const dispatch = useDispatch();
   const [searchParams] = useSearchParams();
   const space = searchParams.get("space");
+  const filter = searchParams.get("filter");
   const { topics, getAllTopicsIsLoading } = useSelector((state) => state.topic);
   const { sortOption, searchQuery } = useSelector((state) => state.topic);
+  const { user } = useSelector((state) => state.auth);
 
   useEffect(() => {
     document.title = space 
       ? `${space} Topics | Campus Connect`
+      : filter === "my-topics"
+      ? "My Topics | Campus Connect"
       : `Home | Campus Connect`;
-  }, [space]);
+  }, [space, filter]);
 
   useEffect(() => {
     dispatch(resetUserProfile());
     dispatch(getAllTopics({ sortOption, searchQuery, space }));
   }, [dispatch, sortOption, searchQuery, space]);
+
+  const filteredTopics = useMemo(() => {
+    if (filter === "my-topics") {
+      return topics.filter(topic => topic.author.username === user?.username);
+    }
+    return topics;
+  }, [topics, filter, user]);
 
   return (
     <>
@@ -38,6 +49,11 @@ const Home = () => {
                 {space && (
                   <h4 className="space-title mb-4">
                     Topics in {space}
+                  </h4>
+                )}
+                {filter === "my-topics" && (
+                  <h4 className="space-title mb-4">
+                    My Topics
                   </h4>
                 )}
                 <Form.Select
@@ -59,7 +75,7 @@ const Home = () => {
                   </>
                 )}
                 {!getAllTopicsIsLoading &&
-                  topics?.map((topic, idx) => (
+                  filteredTopics?.map((topic, idx) => (
                     <TopicItem key={idx} topic={topic} />
                   ))}
               </div>
