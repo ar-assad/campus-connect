@@ -1,27 +1,35 @@
 const mongoose = require("mongoose");
 
-const AutoIncrement = require("mongoose-sequence")(mongoose);
-
-const TopicSchema = new mongoose.Schema(
+const topicSchema = new mongoose.Schema(
   {
-    owner: String,
-    title: String,
-    content: String,
-    slug: String,
-    upvotes: [
+    owner: {
+      type: String,
+      required: true,
+    },
+    title: {
+      type: String,
+      required: true,
+    },
+    content: {
+      type: String,
+      required: true,
+    },
+    slug: {
+      type: String,
+      required: true,
+    },
+    selectedSpace: {
+      type: String,
+      required: true,
+    },
+    tags: [
       {
-        type: String,
-        ref: "User",
-        default: [],
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Tag",
       },
     ],
-    downvotes: [
-      {
-        type: String,
-        ref: "User",
-        default: [],
-      },
-    ],
+    upvotes: [String],
+    downvotes: [String],
     viewsCount: {
       type: Number,
       default: 0,
@@ -30,27 +38,19 @@ const TopicSchema = new mongoose.Schema(
       type: Number,
       default: 0,
     },
-    tags: [
-      {
-        type: mongoose.Types.ObjectId,
-        ref: "Tag",
-        default: [],
-      },
-    ],
   },
-  { timestamps: true }
+  {
+    timestamps: true,
+    toJSON: { virtuals: true },
+    toObject: { virtuals: true },
+  }
 );
 
-TopicSchema.plugin(AutoIncrement, { inc_field: "TopicID" });
-
-TopicSchema.virtual("author", {
+topicSchema.virtual("author", {
   ref: "User",
   localField: "owner",
   foreignField: "username",
   justOne: true,
 });
 
-TopicSchema.set("toObject", { virtuals: true });
-TopicSchema.set("toJSON", { virtuals: true });
-
-module.exports = mongoose.model("Topic", TopicSchema);
+module.exports = mongoose.model("Topic", topicSchema);

@@ -2458,3 +2458,10 @@ main .container .edit-profile .left .profile .section-content button:hover,
 button.login:hover, button.register:hover{
   background-color: var(--color-primary-hover) !important;
 }
+
+.space-title {
+  color: var(--color-primary);
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}

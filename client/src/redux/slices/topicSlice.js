@@ -28,10 +28,10 @@ const initialState = {
 
 export const getAllTopics = createAsyncThunk(
   "topic/getAllTopics",
-  async ({ sortOption, searchQuery }, { rejectWithValue }) => {
+  async ({ sortOption, searchQuery, space }, { rejectWithValue }) => {
     try {
       const { data } = await axios.get("/api/topics", {
-        params: { sort: sortOption, search: searchQuery },
+        params: { sort: sortOption, search: searchQuery, space },
       });
       return data;
     } catch (err) {

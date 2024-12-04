@@ -6,12 +6,16 @@ const Space = require("../models/spaceModel");
 module.exports = {
   getAllTopics: async (req, res) => {
     try {
-      const { search, sort } = req.query;
+      const { search, sort, space } = req.query;
       let sortOptions = {};
       let searchQuery = {};
 
       if (search && search.length > 0) {
         searchQuery = { title: new RegExp(search, "i") };
+      }
+
+      if (space && space.length > 0) {
+        searchQuery = { ...searchQuery, selectedSpace: space };
       }
 
       if (sort === "latest") {
@@ -35,6 +39,7 @@ module.exports = {
       return res.json(topics);
     } catch (err) {
       console.log(err.message);
+      return res.status(500).json({ message: err.message });
     }
   },
   getTopic: async (req, res) => {
@@ -92,6 +97,7 @@ module.exports = {
         title: title.trim(),
         content: content.trim(),
         slug: slug.trim(),
+        selectedSpace: selectedSpace,
         tags: createdTags,
       });
       topic = await topic.populate({
