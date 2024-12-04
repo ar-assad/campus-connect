@@ -87,7 +87,9 @@ const TopicContent = ({ topic, onDeleting }) => {
             </p>
           </div>
         </div>
-        <p className="topic-summary">{topic?.content}</p>
+        <div className="topic-summary" style={{ whiteSpace: 'pre-wrap' }}>
+          {topic?.content}
+        </div>
         <div className="tags-container d-flex align-items-center">
           <span className="d-flex align-items-center">
             <BsFillTagFill />

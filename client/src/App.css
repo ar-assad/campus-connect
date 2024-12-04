@@ -599,12 +599,10 @@ main .container .topic-item .topic-item-content .topic-title {
   margin-bottom: 1.3rem;
 }
 
-main .container .topic-item .topic-item-content .topic-summary {
-  color: var(--color-secondary);
-  font-size: 15px;
-  line-height: 26px;
-  padding-bottom: 20px;
-  border-bottom: 1px solid var(--color-background);
+main .container .topic-item .topic-item-content .topic-summary,
+main .container .thread .comments-container .comment .comment-info .comment-content {
+  white-space: pre-wrap;
+  word-break: break-word;
 }
 
 main .container .topic-item .topic-item-content .topic-meta {

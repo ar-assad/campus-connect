@@ -76,7 +76,9 @@ const CommentItem = (props) => {
                     .
                   </span>
                 </div>
-                <p className="comment-content">{comment?.content}</p>
+                <div className="comment-content" style={{ whiteSpace: 'pre-wrap' }}>
+                  {comment?.content}
+                </div>
                 <Nav className="comment-actions">
                   <Nav.Link
                     disabled={votingIsLoading && toVote === comment?._id}
