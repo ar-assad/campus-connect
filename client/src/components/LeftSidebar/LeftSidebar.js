@@ -23,6 +23,14 @@ const LeftSidebar = () => {
     }
   };
 
+  const handleMyAnswersClick = () => {
+    if (currentFilter === "my-answers") {
+      navigate("/");
+    } else {
+      navigate("/?filter=my-answers");
+    }
+  };
+
   return (
     <Col lg={3} className="left-sidebar">
       <Nav className="flex-column side-topics">
@@ -40,7 +48,10 @@ const LeftSidebar = () => {
           <MdQuestionAnswer />
           my topics
         </Nav.Link>
-        <Nav.Link className="d-flex align-items-center">
+        <Nav.Link 
+          className={`d-flex align-items-center ${currentFilter === "my-answers" ? "active" : ""}`}
+          onClick={handleMyAnswersClick}
+        >
           <MdReplyAll />
           my answers
         </Nav.Link>
