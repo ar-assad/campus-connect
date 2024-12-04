@@ -25,7 +25,7 @@ const Login = () => {
   );
 
   useEffect(() => {
-    document.title = `Login | ONetwork Forum`;
+    document.title = `Login | Campus Connect`;
   }, []);
 
   const handleSubmit = async (e) => {
@@ -62,7 +62,7 @@ const Login = () => {
               {isLoading && <div className="loader"></div>}
               <h3 className="text-center">Login</h3>
               <p className="text-center">
-                Welcome to ONetwork, a platform to connect with the world.
+                Welcome to Campus Connect.
               </p>
               {message && (
                 <div

@@ -167,7 +167,7 @@ module.exports = {
           message: "You're not logged-in!",
         });
       }
-      res.cookie("refreshToken", "Onetwork Forum", {
+      res.cookie("refreshToken", "Campus Connect", {
         maxAge: -1,
         httpOnly: true,
         sameSite: "Strict",

@@ -15,7 +15,7 @@ const NewTopic = () => {
   const { spaces } = useSelector((state) => state.topic);
 
   useEffect(() => {
-    document.title = `Add New Topic | ONetwork Forum`;
+    document.title = `Add New Topic | Campus Connect`;
   }, []);
 
   useEffect(() => {

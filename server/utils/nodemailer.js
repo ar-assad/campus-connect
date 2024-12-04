@@ -13,7 +13,7 @@ const sendEmail = async (options) => {
   });
 
   const mailOptions = {
-    from: `ONetwork Forum <${process.env.SMTP_USERNAME}>`,
+    from: `Campus Connect <${process.env.SMTP_USERNAME}>`,
     to: options.email,
     subject: options.subject,
     text: options.text,

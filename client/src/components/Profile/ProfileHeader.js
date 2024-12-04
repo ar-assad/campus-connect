@@ -25,7 +25,7 @@ const ProfileHeader = memo(() => {
   const loggedUser = JSON.parse(localStorage.getItem("user"))?.username;
 
   useEffect(() => {
-    if (username) document.title = `${username} Profile | ONetwork Forum`;
+    if (username) document.title = `${username} Profile | Campus Connect`;
   }, [username]);
 
   useMemo(() => {
