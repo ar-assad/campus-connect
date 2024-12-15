@@ -25,7 +25,7 @@ CampusConnect is a forum website developed as a web engineering semester project
 1. Clone the repository:
    ```sh
    git clone https://github.com/ar-assad/campus-connect.git
-   cd CampusConnect
+   cd campus-connect
    ```
 
 2. Install dependencies for both client and server:
