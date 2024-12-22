@@ -22,10 +22,7 @@ CampusConnect is a forum website developed as a web engineering semester project
 
 ## Demo
 
-<video width="600" controls>
-  <source src="https://files.catbox.moe/6auxny.mp4" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+https://github.com/user-attachments/assets/a4a88c81-810a-4214-934a-d00b654f44d5
 
 ## Installation
 
