@@ -20,6 +20,13 @@ CampusConnect is a forum website developed as a web engineering semester project
 - **File Uploads**: Cloudinary
 - **Styling**: CSS
 
+## Demo
+
+<video width="600" controls>
+  <source src="https://files.catbox.moe/6auxny.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
 ## Installation
 
 1. Clone the repository:
@@ -58,3 +65,5 @@ CampusConnect is a forum website developed as a web engineering semester project
 ---
 
 Feel free to reach out if you have any questions or feedback. Enjoy using CampusConnect!
+
+*A fork of [ONetwork-Forum](https://github.com/ilyasbelfar/ONetwork-Forum)*
